@@ -1,0 +1,30 @@
+{
+  "name": "pi-autocontinue",
+  "version": "0.1.0",
+  "description": "Resume Pi automatically after a subscription usage window resets",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HironTez/pi-autocontinue.git"
+  },
+  "homepage": "https://github.com/HironTez/pi-autocontinue#readme",
+  "bugs": { "url": "https://github.com/HironTez/pi-autocontinue/issues" },
+  "keywords": ["pi-package", "pi-extension", "subscription", "rate-limit"],
+  "files": ["src", "README.md", "LICENSE"],
+  "pi": { "extensions": ["./src/index.ts"] },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm test",
+    "prepack": "npm run check"
+  },
+  "peerDependencies": { "@earendil-works/pi-coding-agent": ">=1.0.4" },
+  "devDependencies": {
+    "@earendil-works/pi-ai": "1.0.4",
+    "@earendil-works/pi-coding-agent": "1.0.4",
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.3"
+  },
+  "engines": { "node": ">=22.19.0" }
+}
